@@ -1,0 +1,24 @@
+.topBarTitle {
+    margin: 0;
+    /* border: 2px solid rgb(130, 238, 166); */
+}
+.dates {
+    /* border: 2px solid rgb(242, 69, 69); */
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+}
+.dateInput{
+    background-color: var(--darkGreen);
+    border: 2px solid var(--darkGreen);
+    border-radius: 7px;
+    font-size: 12px;
+}
+.timePeriod {
+    background-color: var(--darkGreen);
+    color: var(--textcolor);
+    border-radius: 5px;
+    border: 2px solid var(--darkGreen);
+    font-size: 12px;
+    /* width: 50%; */
+}

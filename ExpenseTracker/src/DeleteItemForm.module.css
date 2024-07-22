@@ -1,0 +1,28 @@
+.ItemName {
+    width: 99%;
+    max-width: 100%;
+    background-color: var(--darkGreen);
+    border: none;
+    height: 40%;
+    margin: 0 0.5% 0 0.5%;
+    border-radius: 7px;
+}
+
+.deleteForm {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    margin: 1.5% auto 1.5% auto;
+    width: 98%;
+    height: 10%;
+    gap: 8%;
+    margin: 0 1% 0 1%;
+}
+.submit {
+    border: none;
+    background-color: var(--darkGreen);
+    color: var(--textcolor);
+    height: 60%;
+    border-radius: 7px;
+    cursor: pointer;
+}

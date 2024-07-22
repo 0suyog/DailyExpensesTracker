@@ -1,0 +1,9 @@
+.expenseContainer {
+    /* border: 2px solid rebeccapurple; */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 2%;
+    overflow-y: scroll;
+    align-items: center;
+}

@@ -1,0 +1,55 @@
+.container {
+    display: flex;
+    width: 95%;
+    justify-content: space-around;
+    background-color: var(--darkGreen);
+    border-radius: 15px;
+    align-items: center;
+    border: solid;
+    border-top: 0;
+    border-bottom: 2px solid var(--darkerGreen);
+    border-left: 2px solid var(--darkerGreen);
+    border-right: 2px solid var(--darkerGreen);
+    border-color: var(--darkerGreen);
+    margin-top: 1%;
+    padding: 2% 0 2% 0;
+}
+
+.details {
+    display: flex;
+    align-items: center;
+    width: 75%;
+    justify-content: space-between;
+    /* border: 2px solid black; */
+}
+.cross {
+    color: #981f1f;
+    align-self: center;
+    font-size: 1.5em;
+}
+
+.check {
+    color: var(--darkGreen);
+    align-self: center;
+}
+.payExpense {
+    /* height: 100%;
+    width: 100%; */
+    background-color: var(--darkGreen);
+    border: 2px solid var(--darkerGreen);
+    border-radius: 7px;
+}
+.unPayExpense {
+    background-color: #981f1f;
+    border-radius: 7px;
+    border: 2px solid #5f1212;
+}
+.delete {
+    background-color: #981f1f69;
+    border-radius: 7px;
+    /* padding: 5px; */
+    border: 2px solid #5f12125a;
+}
+.trash {
+    color: red;
+}

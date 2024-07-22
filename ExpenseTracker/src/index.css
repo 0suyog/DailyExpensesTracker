@@ -1,0 +1,19 @@
+:root {
+    --darkGreen: #1f9861;
+    --textcolor: #ccc9c9;
+    --darkerGreen: #125f3c;
+}
+html,
+body,
+.body {
+    color: var(--textcolor);
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+        Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}

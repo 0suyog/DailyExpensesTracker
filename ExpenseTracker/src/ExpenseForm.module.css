@@ -1,0 +1,110 @@
+.expenseForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 1.5% auto 1.5% auto;
+    width: 98%;
+    height: 42%;
+    gap: 2%;
+    margin: 0 1% 0 1%;
+}
+.expenseFormBigger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 1.5% auto 1.5% auto;
+    width: 98%;
+    height: 53%;
+    gap: 2%;
+    margin: 0 1% 0 1%;
+}
+label {
+    cursor: pointer;
+}
+fieldset {
+    outline: none;
+    max-width: 100%;
+    color: white;
+    border: 2px solid var(--darkGreen);
+    height: 20%;
+    border-radius: 7px;
+    font-size: 16px;
+    background: transparent;
+    cursor: text;
+    /* box-shadow: 0 0 0 1px #dddddd, 0 2px 4px 0 rgb(0 0 0 / 7%), 0 1px 1.5px 0 rgb(0 0 0 / 5%); */
+    padding: 0;
+}
+fieldset:focus-within {
+    border: 2px solid var(--darkGreen);
+    box-shadow: 0 0 5px 2px var(--darkGreen);
+}
+fieldset:focus-within legend {
+    text-shadow: 2px 2px 40x #1f9861;
+}
+legend {
+    padding-bottom: 1%;
+    color: var(--darkGreen);
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.expensePriceFieldSet legend {
+    background-color: #3b4042;
+}
+.paidexpensePriceFieldSet legend {
+    background-color: #35393b;
+}
+.editableInput {
+    width: 100%;
+    height: calc(100% - 15px);
+    padding-top: 5px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    appearance: none;
+    /* box-sizing: border-box; */
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* For Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+.ItemName {
+    width: 99%;
+    max-width: 100%;
+    background-color: var(--darkGreen);
+    border: none;
+    height: 10%;
+    margin: 0 0.5% 0 0.5%;
+    border-radius: 7px;
+}
+.radiosAndChecks {
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.paidexpensePriceFieldSet {
+    height: 20%;
+}
+
+.submit {
+    border: none;
+    background-color: var(--darkGreen);
+    color: var(--textcolor);
+    height: 15%;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.checkBox {
+    accent-color: var(--darkGreen);
+    align-self: center;
+    margin: 0;
+}

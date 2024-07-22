@@ -1,0 +1,50 @@
+.leftContainer {
+    width: 39%;
+    /* border: 2px solid rgb(130, 168, 238); */
+    height: 98%;
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+    color: var(--textcolor);
+    overflow-y: auto;
+}
+
+.middleContainer {
+    height: 100%;
+    /* display: flex; */
+    flex-direction: column;
+
+    /* align-items: center; */
+    width: 29%;
+    gap: 1.5%;
+    /* justify-content: space-around; */
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.rightContainer {
+    width: 29%;
+    height: 99%;
+}
+
+.dropDown {
+    height: 5%;
+    margin: 1.5% auto 1.5% auto;
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    padding: 0 4% 0 4%;
+    border-radius: 7px;
+    align-items: center;
+    background-color: var(--darkerGreen);
+}
+
+.total {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    border: 2px solid var(--darkerGreen);
+    border-radius: 7px;
+    align-items: center;
+    background-color: #4c5c5752;
+}

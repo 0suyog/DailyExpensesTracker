@@ -1,0 +1,111 @@
+:root {
+    --darkGreen: #1f9861;
+    --textcolor: #ccc9c9;
+}
+
+.container {
+    border-radius: 25px;
+    width: 40%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border: 2px solid gray;
+}
+
+.loginTitle {
+    margin: 0;
+    width: 60%;
+    text-align: center;
+    color: var(--darkGreen);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0;
+    width: 80%;
+    height: 70%;
+    gap: 5%;
+}
+.form label {
+    cursor: pointer;
+}
+
+.textInput fieldset {
+    outline: none;
+    color: white;
+    border: 2px solid var(--darkGreen);
+    height: 40%;
+    border-radius: 7px;
+    font-size: 16px;
+    background: transparent;
+    box-shadow: 0 0 0 1px #dddddd, 0 2px 4px 0 rgb(0 0 0 / 7%), 0 1px 1.5px 0 rgb(0 0 0 / 5%);
+    padding: 0;
+}
+.textInput fieldset:focus-within {
+    border: 2px solid var(--darkGreen);
+    box-shadow: 0 0 5px 2px var(--darkGreen);
+}
+.textInput legend {
+    padding-bottom: 1%;
+    color: var(--darkGreen);
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.textInput .userNameFieldSet legend {
+    background-color: #383c3e;
+}
+.textInput .passwordFieldSet legend {
+    background-color: #35393b;
+}
+.textInput input {
+    width: 98%;
+    height: calc(100% - 15px);
+    padding-top: 5px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+.textInput input:active + .userNameFieldSet {
+    border: 2px solid var(--darkGreen);
+    border-radius: 5px;
+    box-shadow: 0 0 5px 2px var(--darkGreen);
+}
+
+.submit {
+    border: none;
+    background-color: var(--darkGreen);
+    color: var(--textcolor);
+    height: 20%;
+    border-radius: 7px;
+    cursor: pointer;
+}
+.keepAndforget {
+    display: flex;
+    height: 20%;
+    justify-content: space-between;
+    align-items: center;
+}
+.textInput {
+    display: flex;
+    flex-direction: column;
+    height: 60%;
+    justify-content: space-around;
+}
+.checkBox {
+    accent-color: var(--darkGreen);
+    align-self: center;
+    margin: 0;
+}
+
+a {
+    margin: 0;
+    color: var(--darkGreen);
+}
+.redirectToRegiser {
+    text-align: center;
+}

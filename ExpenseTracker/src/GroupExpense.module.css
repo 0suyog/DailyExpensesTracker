@@ -1,0 +1,92 @@
+.container {
+    width: 100%;
+    min-height: fit-content;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.expense {
+    border: 2px solid var(--darkerGreen);
+    padding: 1% 2% 1% 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    width: 95%;
+    min-height: 7vh;
+    background-color: #4c5c5752;
+    cursor: pointer;
+}
+.expenseLeftContainer {
+    display: flex;
+    /* border: 2px solid wheat; */
+}
+.namePriceRemarksContainer {
+    display: flex;
+    flex-direction: column;
+}
+.nameAndPrice {
+    display: flex;
+    flex-direction: row;
+    margin-left: 2%;
+    gap: 5%;
+    width: fit-content;
+}
+.nameAndPrice span {
+    white-space: nowrap;
+}
+
+.expenseButtons {
+    display: flex;
+    flex-direction: row;
+    margin-right: 2%;
+    height: 70%;
+    gap: 5%;
+    /* border: 2px solid #1f9861; */
+}
+.payExpense {
+    /* height: 100%;
+    width: 100%; */
+    background-color: var(--darkGreen);
+    border: 2px solid var(--darkerGreen);
+    border-radius: 7px;
+}
+.unPayExpense {
+    background-color: #981f1f;
+    border-radius: 7px;
+    border: 2px solid #5f1212;
+}
+
+.cross {
+    color: #981f1f;
+    align-self: center;
+    font-size: 1.5em;
+}
+
+.check {
+    color: var(--darkGreen);
+    align-self: center;
+    font-size: 1.5em;
+}
+
+.trash {
+    color: red;
+}
+
+.delete {
+    background-color: #981f1f69;
+    border-radius: 7px;
+    /* padding: 5px; */
+    border: 2px solid #5f12125a;
+}
+
+.detailContainer {
+    width: 100%;
+    min-height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    /* border: 2px solid var(--darkerGreen); */
+    box-sizing: border-box;
+}
