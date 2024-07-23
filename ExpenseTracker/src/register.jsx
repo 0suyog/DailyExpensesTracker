@@ -1,11 +1,12 @@
 import styles from "./register.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faClose } from "@fortawesome/free-solid-svg-icons";
-import { useRef } from "react";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 export function Register() {
     const userNameRef = useRef();
     const passwordRef = useRef();
+    const [showPwd, setShowPwd] = useState(false);
     const navigate = useNavigate();
     function register() {
         const userName = userNameRef.current.value;
@@ -45,22 +46,27 @@ export function Register() {
                                 className={styles.userName}
                                 autofocus
                                 ref={userNameRef}
+                                required
                             />
                         </fieldset>
                         <fieldset className={styles.passwordFieldSet}>
                             <legend>Password:</legend>
-                            <input type="password" className={styles.password} ref={passwordRef} />
+                            <input
+                                type="password"
+                                className={styles.password}
+                                ref={passwordRef}
+                                required
+                            />
+                            <span
+                                className={styles.icon}
+                                onMouseEnter={() => setShowPwd(true)}
+                                onMouseLeave={() => setShowPwd(false)}>
+                                <FontAwesomeIcon
+                                    icon={showPwd ? faEye : faEyeSlash}
+                                    className={styles.icon}></FontAwesomeIcon>
+                            </span>
                         </fieldset>
                     </div>
-                    {/* <div className={styles.keepAndforget}>
-                        <label for="keeplogin">
-                            <input type="checkBox" id="keeplogin" className={styles.checkBox} />{" "}
-                            Keep me looged in
-                        </label>
-                        <a href="/" className={styles.forgotPwd}>
-                            Forgotten Your Password?
-                        </a>
-                    </div> */}
                     <button type="submit" className={styles.submit}>
                         Sign Up
                     </button>

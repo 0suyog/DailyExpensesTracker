@@ -11,8 +11,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faMinimize, faMinus } from "@fortawesome/free-solid-svg-icons";
 import { DeleteForm } from "./DeleteItemForm";
 import { TotalExpenseTable } from "./TotalExpenseTable";
+import { Link, useNavigate } from "react-router-dom";
 
 export function BodyContainer(props) {
+    const navigate = useNavigate();
     const [totalExpense, setTotalExpense] = useState(0);
     const [totalUnpaid, setTotalUnpaid] = useState(0);
     const context = useContext(formContext);
@@ -21,7 +23,7 @@ export function BodyContainer(props) {
             method: "post",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-                userId: sessionStorage.getItem("id"),
+                userId: context.storage.getItem("id"),
             }),
         }).then(async (response) => {
             const result = await response.json();
@@ -69,12 +71,25 @@ export function BodyContainer(props) {
                 {context.showItemForm ? <ItemForm /> : null}
             </div>
             <div className={styles.rightContainer}>
-                <PieChartForExpenses />
-                <TotalExpenseTable />
+                <div className={styles.PieAndLogout}>
+                    <PieChartForExpenses />
+                    <div className={styles.TotalAndLogOut}>
+
                 <div className={styles.total}>
                     <span>{`Total Expense: ${totalExpense}`}</span>
                     <span>{`Total Unpaid: ${totalUnpaid}`}</span>
                 </div>
+                <button className={styles.logOut}
+                    onClick={() => {
+                        navigate("/login");
+                        context.storage.clear();
+                    }}>
+                    Logout
+                </button>
+                        </div>
+
+                </div>
+                <TotalExpenseTable />
             </div>
         </>
     );

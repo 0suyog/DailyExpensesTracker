@@ -7,3 +7,9 @@
     overflow-y: scroll;
     align-items: center;
 }
+
+/* @media screen and (max-width: 798px) {
+    .expenseContainer {
+        width: 100vw;
+    }
+} */

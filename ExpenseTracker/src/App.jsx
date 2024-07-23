@@ -29,8 +29,13 @@ function App() {
     const [unpayAll, setUnpayAll] = useState(false);
     const [newItem, setNewItem] = useState(false);
     const [showDelete, setShowDelete] = useState(false);
+    const [storage, setStorage] = useState(sessionStorage);
     useEffect(() => {
-        setUid(sessionStorage.getItem("id"));
+        setUid(storage.getItem("id"));
+        if (localStorage.getItem("loggedIn")) {
+            setUid(localStorage.getItem("id"));
+        }
+        setStorage(localStorage);
     }, []);
     // ! uncomment this its important
     useEffect(() => {
@@ -75,6 +80,8 @@ function App() {
                     setNewItem: setNewItem,
                     showDelete: showDelete,
                     setShowDelete: setShowDelete,
+                    storage: storage,
+                    setStorage: setStorage,
                 }}>
                 <Routes>
                     <Route path="/login" element={<Login />}></Route>

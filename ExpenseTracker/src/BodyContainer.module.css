@@ -6,7 +6,7 @@
     flex-direction: column;
     gap: 2%;
     color: var(--textcolor);
-    overflow-y: auto;
+    /* overflow-y: auto; */
 }
 
 .middleContainer {
@@ -23,8 +23,9 @@
 }
 
 .rightContainer {
-    width: 29%;
+    width: 32%;
     height: 99%;
+    overflow: auto;
 }
 
 .dropDown {
@@ -38,13 +39,47 @@
     align-items: center;
     background-color: var(--darkerGreen);
 }
-
+.PieAndLogout {
+    display: flex;
+    height: 30%;
+}
+.TotalAndLogOut {
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    gap: 20%;
+    /* justify-content: space-between; */
+    /* width: 90%; */
+}
+.logOut {
+    cursor: pointer;
+    height: 20%;
+    background-color: #981f1f;
+    border-radius: 7px;
+    border: 2px solid #5f1212;
+}
 .total {
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 100%;
+    height: 30%;
     border: 2px solid var(--darkerGreen);
     border-radius: 7px;
     align-items: center;
     background-color: #4c5c5752;
+    justify-content: space-around;
+}
+
+@media screen and (max-width: 798px) {
+    .leftContainer {
+        width: 100vw;
+        height: 50vh;
+    }
+    .middleContainer {
+        width: 100vw;
+    }
+    .rightContainer {
+        width: 100vw;
+        height: auto;
+    }
 }

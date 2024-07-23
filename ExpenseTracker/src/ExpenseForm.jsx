@@ -54,7 +54,7 @@ export function ExpenseForm() {
             method: "post",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-                user: sessionStorage.getItem("id"),
+                user: context.storage.getItem("id"),
             }),
         }).then(async (response) => {
             if (response.ok) {
@@ -67,8 +67,8 @@ export function ExpenseForm() {
 
     function handleChange() {
         setPartiallyPaid(false);
-        setPartiallyPaidPrice(0);
         if (paidRef.current.checked) {
+            setPartiallyPaidPrice(totalPrice);
             setPaidStatus(paidRef.current.value);
         } else if (unpaidRef.current.checked) {
             setPaidStatus(unpaidRef.current.value);
@@ -98,7 +98,7 @@ export function ExpenseForm() {
                 quantity: quantity,
                 changeAll: changeAll,
                 partiallyPaidPrice: partiallyPaid ? Number(partialPriceRef.current.value) : 0,
-                user: sessionStorage.getItem("id"),
+                user: context.storage.getItem("id"),
             }),
         });
         if (response.ok) {

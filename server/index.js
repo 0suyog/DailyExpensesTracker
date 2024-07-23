@@ -267,7 +267,6 @@ app.post("/updateStatus", (req, res) => {
 
 app.post("/updateStatusOfIndividualExpense", (req, res) => {
     const receivedData = req.body;
-    console.log(receivedData);
     Expense.findByIdAndUpdate(receivedData.id, {
         paid: receivedData.status,
         partiallyPaid: receivedData.status ? receivedData.totalPrice : 0,

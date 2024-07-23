@@ -1,7 +1,7 @@
 import styles from "./login.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faClose } from "@fortawesome/free-solid-svg-icons";
-import { useContext, useRef } from "react";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { useContext, useRef, useState } from "react";
 import { formContext } from "./App";
 import { useNavigate, Link } from "react-router-dom";
 import process from "process";
@@ -10,6 +10,11 @@ export function Login() {
     const context = useContext(formContext);
     const userNameRef = useRef();
     const passwordRef = useRef();
+    const [showPwd, setShowPwd] = useState(false);
+    const [loggedIn, setLoggedIn] = useState(false);
+    useState(() => {
+        localStorage.setItem("loggedIn", false);
+    });
     function login() {
         // alert(${import.meta.env.VITE_SERVER_ADDRESS});
         const userName = userNameRef.current.value;
@@ -29,7 +34,7 @@ export function Login() {
             } else {
                 const userId = await response.json();
                 context.setUid(userId);
-                sessionStorage.setItem("id", userId);
+                context.storage.setItem("id", userId);
                 navigate("/");
             }
         });
@@ -52,16 +57,44 @@ export function Login() {
                                 className={styles.userName}
                                 autoFocus
                                 ref={userNameRef}
+                                required
                             />
                         </fieldset>
                         <fieldset className={styles.passwordFieldSet}>
                             <legend>Password:</legend>
-                            <input type="password" className={styles.password} ref={passwordRef} />
+                            <input
+                                type={showPwd ? "text" : "password"}
+                                className={styles.password}
+                                ref={passwordRef}
+                                required
+                            />
+                            <span
+                                className={styles.icon}
+                                onMouseEnter={() => setShowPwd(true)}
+                                onMouseLeave={() => setShowPwd(false)}>
+                                <FontAwesomeIcon
+                                    icon={showPwd ? faEye : faEyeSlash}
+                                    className={styles.icon}></FontAwesomeIcon>
+                            </span>
                         </fieldset>
                     </div>
                     <div className={styles.keepAndforget}>
                         <label for="keeplogin">
-                            <input type="checkBox" id="keeplogin" className={styles.checkBox} />{" "}
+                            <input
+                                type="checkBox"
+                                id="keeplogin"
+                                className={styles.checkBox}
+                                onChange={(e) => {
+                                    if (e.target.checked) {
+                                        context.storage.clear();
+                                        context.setStorage(localStorage);
+                                        localStorage.setItem("loggedIn", true);
+                                    } else {
+                                        localStorage.setItem("loggedIn", false);
+                                        context.setStorage(sessionStorage);
+                                    }
+                                }}
+                            />{" "}
                             Keep me looged in
                         </label>
                         {/* <a href="/" className={styles.forgotPwd}>

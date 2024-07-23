@@ -1,12 +1,6 @@
-:root {
-    --darkGreen: #1f9861;
-    --textcolor: #ccc9c9;
-}
-
-
 .container {
     border-radius: 25px;
-    width: max(40%,306px);
+    width: max(40%, 306px);
     height: 60%;
     display: flex;
     flex-direction: column;
@@ -28,6 +22,7 @@
     margin: 0;
     width: 80%;
     height: 70%;
+    color: var(--textcolor);
 }
 .form label {
     cursor: pointer;
@@ -37,7 +32,7 @@
     outline: none;
     color: white;
     border: 2px solid var(--darkGreen);
-    height: max(40%,51.4px);
+    height: max(40%, 51.4px);
     border-radius: 7px;
     font-size: 16px;
     background: transparent;
@@ -56,22 +51,32 @@
     font-size: 15px;
 }
 
-
 .textInput .userNameFieldSet legend {
     background-color: #383c3e;
 }
 .textInput .passwordFieldSet legend {
     background-color: #35393b;
-    
+}
+.passwordFieldSet {
+    display: flex;
+    align-items: center;
+}
+.icon {
+    height: 75%;
+    display: flex;
+    align-self: self-start;
+    justify-self: flex-start;
+    margin-right: 5px;
+    /* border: 2px solid white; */
 }
 .textInput input {
-    width: 98%; 
-    height: max(calc(100% - 15px),28.5px);
+    color: var(--textcolor);
+    width: 98%;
+    height: max(calc(100% - 15px), 28.5px);
     /* padding-top: 5px ; */
     background-color: transparent;
     border: none;
     outline: none;
-    
 }
 .textInput input:active + .userNameFieldSet {
     border: 2px solid var(--darkGreen);
@@ -83,7 +88,7 @@
     border: none;
     background-color: var(--darkGreen);
     color: var(--textcolor);
-    height: max(20%,51.4px);
+    height: max(20%, 51.4px);
     border-radius: 7px;
     cursor: pointer;
 }
@@ -111,4 +116,15 @@ a {
 }
 .redirectToRegiser {
     text-align: center;
+}
+@media screen and (max-width: 798px) {
+    .container {
+        width: 100vw;
+        height: 50vh;
+    }
+}
+@media screen and (max-height: 500px) {
+    .container {
+        height: 70vh;
+    }
 }

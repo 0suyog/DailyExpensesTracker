@@ -16,7 +16,7 @@ export function ExpenseContainer(props) {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
-                        id: sessionStorage.getItem("id"),
+                        id: context.storage.getItem("id"),
                     }),
                 });
                 if (response.ok) {

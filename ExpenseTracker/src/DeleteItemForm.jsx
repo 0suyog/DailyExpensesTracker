@@ -17,7 +17,7 @@ export function DeleteForm() {
             method: "post",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-                user: sessionStorage.getItem("id"),
+                user: context.storage.getItem("id"),
             }),
         }).then(async (response) => {
             if (response.ok) {

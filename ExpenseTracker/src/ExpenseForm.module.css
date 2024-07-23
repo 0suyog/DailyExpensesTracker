@@ -4,7 +4,7 @@
     justify-content: space-around;
     margin: 1.5% auto 1.5% auto;
     width: 98%;
-    height: 42%;
+    height: 42vh;
     gap: 2%;
     margin: 0 1% 0 1%;
 }
@@ -108,3 +108,9 @@ input[type="number"] {
     align-self: center;
     margin: 0;
 }
+
+/* @media screen and (max-width: 798px) {
+    .expenseForm {
+        width: 100vw;
+    }
+} */

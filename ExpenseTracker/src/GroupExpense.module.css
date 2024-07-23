@@ -20,12 +20,11 @@
 }
 .expenseLeftContainer {
     display: flex;
-    /* border: 2px solid wheat; */
+    gap: 5%;
+    width: 70%;
+    max-height: 70%;
 }
-.namePriceRemarksContainer {
-    display: flex;
-    flex-direction: column;
-}
+
 .nameAndPrice {
     display: flex;
     flex-direction: row;
@@ -33,29 +32,35 @@
     gap: 5%;
     width: fit-content;
 }
-.nameAndPrice span {
+.itemName {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.itemPrice {
     white-space: nowrap;
 }
-
 .expenseButtons {
     display: flex;
     flex-direction: row;
     margin-right: 2%;
     height: 70%;
-    gap: 5%;
-    /* border: 2px solid #1f9861; */
+    width: 30%;
+    /* gap: 5%;jus */
+    justify-content: space-between;
+
 }
 .payExpense {
-    /* height: 100%;
-    width: 100%; */
     background-color: var(--darkGreen);
     border: 2px solid var(--darkerGreen);
     border-radius: 7px;
+    cursor: pointer;
 }
 .unPayExpense {
     background-color: #981f1f;
     border-radius: 7px;
     border: 2px solid #5f1212;
+    cursor: pointer;
 }
 
 .cross {
@@ -71,12 +76,15 @@
 }
 
 .trash {
-    color: red;
+    color: rgb(255, 255, 255);
+    
 }
 
 .delete {
+    cursor: pointer;
     background-color: #981f1f69;
     border-radius: 7px;
+    width: 30%;
     /* padding: 5px; */
     border: 2px solid #5f12125a;
 }
@@ -90,3 +98,9 @@
     /* border: 2px solid var(--darkerGreen); */
     box-sizing: border-box;
 }
+
+/* @media screen and (max-width: 798px) {
+    .container {
+        width: 100vw;
+    }
+} */

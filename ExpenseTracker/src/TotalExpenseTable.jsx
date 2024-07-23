@@ -8,7 +8,7 @@ export function TotalExpenseTable() {
         fetch(`${import.meta.env.VITE_SERVER_ADDRESS}/totalExpenseOfItems`, {
             method: "post",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ userId: sessionStorage.getItem("id") }),
+            body: JSON.stringify({ userId: context.storage.getItem("id") }),
         }).then(async (response) => {
             const result = await response.json();
             if (response.ok) {
@@ -17,21 +17,27 @@ export function TotalExpenseTable() {
         });
     }, [context.updatedForm]);
     return (
-        <>
-            <table>
-                <tr className={styles.tableHeading}>
-                    <th>Item</th>
-                    <th>Total Expense</th>
-                </tr>
+        <div className={styles.container}>
+            <table className={styles.table}>
+                <thead>
+                    <tr className={styles.row}>
+                        <th className={styles.head}>Item</th>
+                        <th className={styles.head}>Total Expense</th>
+                    </tr>
+                </thead>
                 <tbody>
                     {totals.map((total) => (
-                        <tr key={total._id} className={styles.tableHeading}>
-                            <td>{total.item}</td>
-                            <td>{total.total}</td>
+                        <tr key={total._id} className={styles.row}>
+                            <td className={styles.data}>
+                                <span>{total.item}</span>
+                            </td>
+                            <td className={styles.data}>
+                                <span>{total.total}</span>
+                            </td>
                         </tr>
                     ))}
                 </tbody>
             </table>
-        </>
+        </div>
     );
 }

@@ -48,7 +48,7 @@ export function GroupExpense(props) {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     itemId: expense._id,
-                    userId: sessionStorage.getItem("id"),
+                    userId: context.storage.getItem("id"),
                 }),
             }).then(async (response) => {
                 const result = await response.json();
@@ -91,7 +91,7 @@ export function GroupExpense(props) {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
                 itemId: expense._id,
-                userId: sessionStorage.getItem("id"),
+                userId: context.storage.getItem("id"),
                 status: toStatus,
             }),
         }).then((res) => {
@@ -115,7 +115,7 @@ export function GroupExpense(props) {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
                 itemId: expense._id,
-                userId: sessionStorage.getItem("id"),
+                userId: context.storage.getItem("id"),
             }),
         }).then((res) => {
             if (res.ok) {
@@ -140,17 +140,9 @@ export function GroupExpense(props) {
                     setShowDetails(!showDetails);
                 }}>
                 <div className={styles.expenseLeftContainer}>
-                    <div className={styles.namePriceRemarksContainer}>
-                        <div className={styles.nameAndPrice}>
-                            <span>{`Item: ${expense.item}`}</span>
-                            <br />
-
-                            <span>{`Due: Rs. ${expense.due}`}</span>
-
-                            {/* <span>{getFullDate(expense.date)}</span> */}
-                        </div>
-                        {/* <span>This is where remarks supposed to go</span> */}
-                    </div>
+                    <span className={styles.itemName}>{`Item: ${expense.item}`}</span>
+                    <br />
+                <span className={styles.itemPrice}>{`Due: Rs. ${expense.due}`}</span>
                 </div>
                 <div className={styles.expenseButtons}>
                     {expense.due > 0 ? (

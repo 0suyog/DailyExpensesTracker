@@ -1,12 +1,11 @@
 .optionsBar {
     display: flex;
     justify-content: space-between;
-    /* border: 2px solid rgb(255, 0, 0); */
+    color: var(--textcolor);
 }
 .optionBarButtons {
-    /* border: 2px solid rgb(255, 247, 0); */
     display: flex;
-    width: 50%;
+    width: 100%;
     justify-content: space-around;
 }
 .optionButton {
@@ -19,3 +18,9 @@
     background-color: var(--darkerGreen);
     border: 3px solid var(--darkGreen);
 }
+/* 
+@media screen and (max-width: 798px) {
+    .optionsBar {
+        width: 100vw;
+    }
+} */

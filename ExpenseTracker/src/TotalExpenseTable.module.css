@@ -1,3 +1,32 @@
-.tableHeading{
-    border: 2px solid gray;
+.container {
+    max-width: 100%;
+}
+.table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.row {
+    padding: 2%;
+    min-height: 20%;
+}
+
+.head:nth-child(even),
+.data:nth-child(even) {
+    background-color: var(--darkGreen);
+    border: 2px solid var(--darkerGreen);
+    text-align: center;
+}
+.head:nth-child(odd),
+.data:nth-child(odd) {
+    background-color: var(--darkerGreen);
+    border: 2px solid var(--darkGreen);
+    width: 65%;
+    text-align: left;
+}
+.data {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding: 8px;
+    color: var(--textColor);
 }

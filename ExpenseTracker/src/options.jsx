@@ -10,7 +10,7 @@ export function Options() {
             method: "post",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-                userId: sessionStorage.getItem("id"),
+                userId: context.storage.getItem("id"),
             }),
         }).then((response) => {
             if (response.ok) {
@@ -25,7 +25,7 @@ export function Options() {
             method: "post",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-                userId: sessionStorage.getItem("id"),
+                userId: context.storage.getItem("id"),
             }),
         }).then((response) => {
             if (response.ok) {
@@ -40,7 +40,7 @@ export function Options() {
             method: "post",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-                userId: sessionStorage.getItem("id"),
+                userId: context.storage.getItem("id"),
             }),
         }).then((response) => {
             if (response.ok) {

@@ -13,13 +13,12 @@ export function ItemForm() {
             body: JSON.stringify({
                 item: inpRef.current.value,
                 price: priceRef.current.value,
-                user: sessionStorage.getItem("id"),
+                user: context.storage.getItem("id"),
             }),
         }).then((response) => {
             if (response.ok) {
                 alert("itemAdded");
                 context.setNewItem(true);
-                
             }
             // status 409 for item already exists
             else if (response.status == 409) {
@@ -30,16 +29,20 @@ export function ItemForm() {
     return (
         <>
             <form className={styles.itemForm} onSubmit={handleSubmit}>
-                <fieldset className={styles.itemNameFieldSet} onClick={() => {
-                    inpRef.current.focus()
-                }}>
+                <fieldset
+                    className={styles.itemNameFieldSet}
+                    onClick={() => {
+                        inpRef.current.focus();
+                    }}>
                     <legend>ItemName:</legend>
                     <input type="text" className={styles.editableInput} autofocus ref={inpRef} />
                 </fieldset>
 
-                <fieldset className={styles.itemPriceFieldSet} onClick={() => {
-                    priceRef.current.focus()
-                }}>
+                <fieldset
+                    className={styles.itemPriceFieldSet}
+                    onClick={() => {
+                        priceRef.current.focus();
+                    }}>
                     <legend>Price:</legend>
                     <input type="number" className={styles.editableInput} ref={priceRef} />
                 </fieldset>
