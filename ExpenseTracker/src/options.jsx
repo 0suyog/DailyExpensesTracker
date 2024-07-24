@@ -31,7 +31,7 @@ export function Options() {
             if (response.ok) {
                 context.setUpdatedForm(true);
             } else {
-                alert("failed to pay all");
+                alert("failed to unpay all");
             }
         });
     }
@@ -46,7 +46,7 @@ export function Options() {
             if (response.ok) {
                 context.setUpdatedForm(true);
             } else {
-                alert("failed to pay all");
+                alert("failed to delete all");
             }
         });
     }

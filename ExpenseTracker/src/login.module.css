@@ -103,6 +103,7 @@
     flex-direction: column;
     height: 60%;
     justify-content: space-around;
+    color: var(--textcolor);
 }
 .checkBox {
     accent-color: var(--darkGreen);

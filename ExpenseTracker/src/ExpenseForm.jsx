@@ -85,7 +85,6 @@ export function ExpenseForm() {
 
     async function handleSubmit(e) {
         e.preventDefault();
-        alert(paidStatus);
         const response = await fetch(`${import.meta.env.VITE_SERVER_ADDRESS}/expense`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },

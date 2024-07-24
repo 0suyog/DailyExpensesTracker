@@ -42,6 +42,7 @@
 .PieAndLogout {
     display: flex;
     height: 30%;
+    flex-direction: column;
 }
 .TotalAndLogOut {
     display: flex;
@@ -57,6 +58,7 @@
     background-color: #981f1f;
     border-radius: 7px;
     border: 2px solid #5f1212;
+    color: var(--textcolor);
 }
 .total {
     display: flex;

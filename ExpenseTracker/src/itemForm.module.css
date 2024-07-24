@@ -6,8 +6,6 @@
     width: 98%;
     height: 33%;
     color: var(--textcolor);
-    /* gap: 2%; */
-    /* margin: 0 1% 0 1%; */
     margin: 1.5% auto  1.5% auto;
 }
 .itemForm label {
@@ -53,7 +51,7 @@
     border: none;
     outline: none;
     appearance: none;
-    /* box-sizing: border-box; */
+    color: var(--textcolor);
 }
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {

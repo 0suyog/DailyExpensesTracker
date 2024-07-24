@@ -61,6 +61,7 @@ legend {
     background-color: transparent;
     border: none;
     outline: none;
+    color: var(--textcolorc);
     appearance: none;
     /* box-sizing: border-box; */
 }

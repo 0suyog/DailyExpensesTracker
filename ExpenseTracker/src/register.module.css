@@ -27,7 +27,7 @@
 }
 .form label {
     cursor: pointer;
-} 
+}
 
 .textInput fieldset {
     outline: none;
@@ -99,6 +99,7 @@
 .textInput {
     display: flex;
     flex-direction: column;
+    color: var(--textcolor);
     height: 60%;
     justify-content: space-around;
 }

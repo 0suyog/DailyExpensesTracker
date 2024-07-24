@@ -17,8 +17,9 @@ export function ItemForm() {
             }),
         }).then((response) => {
             if (response.ok) {
-                alert("itemAdded");
                 context.setNewItem(true);
+                inpRef.current.value = "";
+                priceRef.current.value = 0;
             }
             // status 409 for item already exists
             else if (response.status == 409) {

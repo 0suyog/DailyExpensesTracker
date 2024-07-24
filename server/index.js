@@ -36,6 +36,7 @@ app.post("/register", async (req, res) => {
 });
 app.post("/login", (req, res) => {
     const userDetails = req.body;
+    console.log("sdlaf");
     User.find({ name: userDetails.userName })
         .exec()
         .then((data) => {
@@ -454,6 +455,10 @@ app.post("/totalExpense", (req, res) => {
             },
         },
     ]).then((data) => {
+        if (data.length == 0) {
+            res.sendStatus(404);
+        }
+
         res.status(200).json(data[0]);
     });
 });

@@ -26,10 +26,13 @@ export function BodyContainer(props) {
                 userId: context.storage.getItem("id"),
             }),
         }).then(async (response) => {
-            const result = await response.json();
             if (response.ok) {
+                const result = await response.json();
                 setTotalExpense(result.total);
                 setTotalUnpaid(result.due);
+            } else if (response.status == 404) {
+                setTotalExpense(0);
+                setTotalUnpaid(0);
             } else {
                 alert("some error occured");
             }
@@ -74,20 +77,19 @@ export function BodyContainer(props) {
                 <div className={styles.PieAndLogout}>
                     <PieChartForExpenses />
                     <div className={styles.TotalAndLogOut}>
-
-                <div className={styles.total}>
-                    <span>{`Total Expense: ${totalExpense}`}</span>
-                    <span>{`Total Unpaid: ${totalUnpaid}`}</span>
-                </div>
-                <button className={styles.logOut}
-                    onClick={() => {
-                        navigate("/login");
-                        context.storage.clear();
-                    }}>
-                    Logout
-                </button>
+                        <div className={styles.total}>
+                            <span>{`Total Expense: ${totalExpense}`}</span>
+                            <span>{`Total Unpaid: ${totalUnpaid}`}</span>
                         </div>
-
+                        <button
+                            className={styles.logOut}
+                            onClick={() => {
+                                navigate("/login");
+                                context.storage.clear();
+                            }}>
+                            Logout
+                        </button>
+                    </div>
                 </div>
                 <TotalExpenseTable />
             </div>

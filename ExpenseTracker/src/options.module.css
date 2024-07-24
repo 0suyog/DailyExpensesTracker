@@ -10,13 +10,14 @@
 }
 .optionButton {
     width: 30%;
-    background-color: var(--darkGreen);
+    background-color: var(--darkerGreen);
     border-radius: 7px;
-    border: 3px solid var(--darkerGreen);
+    border: 3px solid var(--darkGreen);
+    color: var(--textcolor)
 }
 .optionButton:active {
-    background-color: var(--darkerGreen);
-    border: 3px solid var(--darkGreen);
+    background-color: var(--darkGreen);
+    border: 3px solid var(--darkerGreen);
 }
 /* 
 @media screen and (max-width: 798px) {
