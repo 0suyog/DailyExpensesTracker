@@ -142,7 +142,7 @@ export function GroupExpense(props) {
                 <div className={styles.expenseLeftContainer}>
                     <span className={styles.itemName}>{`Item: ${expense.item}`}</span>
                     <br />
-                <span className={styles.itemPrice}>{`Due: Rs. ${expense.due}`}</span>
+                    <span className={styles.itemPrice}>{`Due: Rs. ${expense.due}`}</span>
                 </div>
                 <div className={styles.expenseButtons}>
                     {expense.due > 0 ? (

@@ -95,11 +95,8 @@ export function Login() {
                                     }
                                 }}
                             />{" "}
-                            Keep me looged in
+                            Keep me logged in
                         </label>
-                        {/* <a href="/" className={styles.forgotPwd}>
-                            Forgotten Your Password?
-                        </a> */}
                     </div>
                     <button type="submit" className={styles.submit}>
                         Sign In

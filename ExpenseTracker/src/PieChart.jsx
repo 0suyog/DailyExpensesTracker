@@ -15,9 +15,8 @@ export default function PieChartForExpenses() {
     const context = React.useContext(formContext);
     const [data, setData] = React.useState(context.allExpenses);
     React.useEffect(() => {
-        setData(context.allExpenses)
-        
-    },[context.allExpenses]);
+        setData(context.allExpenses);
+    }, [context.allExpenses]);
     const TOTAL = data.map((item) => item.value).reduce((a, b) => a + b, 0);
     const getArcLabel = (params) => {
         const percent = params.value / TOTAL;
@@ -30,21 +29,33 @@ export default function PieChartForExpenses() {
         legend: { hidden: true },
     };
     return (
-        <PieChart
-            series={[
-                {
-                    outerRadius: 80,
-                    data,
-                    arcLabel: getArcLabel,
-                },
-            ]}
-            sx={{
-                [`& .${pieArcLabelClasses.root}`]: {
-                    fill: "white",
-                    fontSize: 14,
-                },
-            }}
-            {...sizing}
-        />
+        // <PieChart
+        //     series={[
+        //         {
+        //             outerRadius: 80,
+        //             data,
+        //             arcLabel: getArcLabel,
+        //         },
+        //     ]}
+        //     sx={{
+        //         [`& .${pieArcLabelClasses.root}`]: {
+        //             fill: "white",
+        //             fontSize: 14,
+        //         },
+        //     }}
+        //     {...sizing}
+        // />
+        <div>
+            <PieChart
+                series={[
+                    {
+                        data: data,
+                    },
+                ]}
+                margin={{ left: -50 }}
+                width={450}
+                height={200}
+            />
+        </div>
     );
 }
